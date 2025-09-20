@@ -1,87 +1,128 @@
-.chat-container {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
-  border: 2px solid #ddd;
-  border-radius: 12px;
-  background: #f9f9f9;
+/* Import futuristic font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Orbitron", sans-serif;
+  background-color: #0a0a0a;
+  color: #00ffea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app {
+  display: flex;
+  gap: 20px;
+  width: 95%;
+  height: 90vh;
+}
+
+.chat-window {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  height: 80vh;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 15px;
-  font-family: Arial, sans-serif;
-  color: #333;
-}
-
-.chat-box {
-  flex: 1;
-  overflow-y: auto;
+  border: 2px solid #00ffea;
+  border-radius: 12px;
+  background: rgba(20, 20, 20, 0.95);
   padding: 10px;
-  background: #fff;
+  box-shadow: 0 0 15px #00ffea;
+}
+
+.user-settings {
+  margin-bottom: 10px;
+}
+
+.username-input {
+  width: 100%;
+  padding: 6px;
+  background: #000;
+  color: #00ffea;
+  border: 1px solid #00ffea;
+  border-radius: 6px;
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+}
+
+.settings {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #00ffea;
+}
+
+.settings label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 🔹 make messages a flex column */
+.messages {
+  flex: 1;
+  padding: 10px;
   border-radius: 8px;
-  border: 1px solid #ddd;
-  margin-bottom: 15px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  display: flex;              /* added */
+  flex-direction: column;     /* added */
 }
 
 .message {
-  padding: 8px 12px;
-  border-radius: 18px;
   margin: 6px 0;
-  max-width: 70%;
+  padding: 6px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  max-width: 80%;
   word-wrap: break-word;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
 }
 
-.message.sent {
-  background: #dcf8c6; /* WhatsApp green */
-  align-self: flex-end;
-  text-align: right;
+/* 🔹 align sender right */
+.message.self {
+  align-self: flex-end;       /* added */
+  background: #00ffea;
+  color: #000;
+  box-shadow: 0 0 8px #00ffea;
 }
 
-.message.received {
-  background: #eee;
-  align-self: flex-start;
-  text-align: left;
-}
-
-.sender {
-  font-weight: bold;
-  font-size: 12px;
-  color: #555;
-  display: block;
-  margin-bottom: 2px;
+/* 🔹 align receiver left */
+.message.other {
+  align-self: flex-start;     /* added */
+  background: #1a1a1a;
+  border: 1px solid #00ffea;
+  color: #00ffea;
 }
 
 .input-area {
   display: flex;
-  gap: 10px;
+  gap: 8px;
 }
 
 .input-area input {
   flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  outline: none;
-  font-size: 14px;
+  padding: 6px;
+  border: 1px solid #00ffea;
+  border-radius: 6px;
+  background: #000;
+  color: #00ffea;
+  font-family: "Orbitron", sans-serif;
 }
 
 .input-area button {
-  background: #25d366;
-  color: white;
+  padding: 6px 14px;
   border: none;
-  border-radius: 20px;
-  padding: 10px 20px;
-  cursor: pointer;
+  border-radius: 6px;
+  background: #00ffea;
+  color: #000;
   font-weight: bold;
-  transition: background 0.3s ease;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "Orbitron", sans-serif;
 }
 
 .input-area button:hover {
-  background: #1ebd5a;
+  background: #00ccaa;
+  box-shadow: 0 0 10px #00ffea;
 }
